@@ -35,9 +35,9 @@
         <div class="large-5 medium-5 small-5 columns">
                 <form>
         <table border=0 id="chercher"><tr>
-                  <td width="75%"><input type="text"></td>
-                  <td><a href="results.htm" class="hollow button">Search</a></td>
-                  <td><a href="save.htm" class="button">Save</a></td>
+                  <td width="75%"><input type="text" disabled></td>
+                  <td><a href="results.htm" class="hollow button" disabled>Search</a></td>
+                  <td><a href="save.htm" class="button" disabled>Save</a></td>
         </tr></table>
       </form>
         </div>
@@ -69,7 +69,7 @@
                 <div class=""><br>
                         <p><strong>My picture</strong></p>
                         <p><del>Small image that accompanies each of your contributions.</del></p>
-                        <label for="FileUpload" class="button">Upload image (disabled) ...</label>
+                        <label for="FileUpload" class="button" disabled>Upload image (disabled) ...</label>
                         <input type="file" id="FileUpload" class="show-for-sr" disabled>
                         <p class="text-center">Soon available... <em>Please upload an image<br> approx 200 pixels by 200 pixels.</em></p>
                 </div>
@@ -107,10 +107,10 @@
         </fieldset>
         <fieldset class="large-6 medium-6 small-6 columns">
           <legend><strong>Type of stakeholder</strong></legend>
-          <input id="founder" type="checkbox" checked><label for="founder">Founder</label>
-          <input id="worker" type="checkbox" checked><label for="worker">Worker</label>
-          <input id="vendor" type="checkbox" checked><label for="vendor">Vendor</label>
-          <input id="consumer" type="checkbox" checked><label for="consumer">Consumer</label>
+          <input id="founder" name="founder" type="checkbox" checked><label for="founder">Founder</label>
+          <input id="worker" name="worker" type="checkbox" checked><label for="worker">Worker</label>
+          <input id="vendor" name="vendor" type="checkbox" checked><label for="vendor">Vendor</label>
+          <input id="consumer" name="consumer" type="checkbox" checked><label for="consumer">Consumer</label>
         </fieldset>
 </div>
 
@@ -283,7 +283,7 @@
                                 <p class="text-right"><strong>E-mail :</strong>
                                 </div>
                                 <div class="large-10 medium-10 small-10 columns">
-                                <input type="text" name="email">
+                                <input type="email" name="email">
                                 </div>
                   </div>
                   <!-- Website -->
