@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+
+<head>
+        <title>Do We Know Who We Are ?</title>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/foundation.min.css">
+        <link rel="stylesheet" href="foundation-icons/foundation-icons.css" />
+        <link rel="stylesheet" href="css/machina.css">
+</head>
+
+<body>
+
+<!-- liens-publics -->
+<div class="row" id="liens-publics">
+        <div class="large-12 medium-12 small-12 columns">
+                <ul class="menu align-right">
+                <li><a href="connect.htm">Connect</a></li>
+                <li><a href="subscribe.htm">Subscribe</a></li>
+                <li><a href="agenda.htm">Agenda</a></li>
+                <li><a href="faq.htm">FAQ</a></li>
+                <li><a href="about.htm">About</a></li>
+                <li><a href="home.htm">Home</a></li>
+                </ul>
+        </div>
+</div>
+
+<!-- logo + chercher + filtrer -->
+<div class="row">
+        <div class="large-7 medium-7 small-7 columns">
+                <a href="home.htm"><img src="img/indigene-logo.png" alt="Communauté indigene"></a>
+        </div>
+        <div class="large-5 medium-5 small-5 columns">
+                <form>
+        <table border=0 id="chercher"><tr>
+                  <td width="75%"><input type="text"></td>
+                  <td><a href="results.htm" class="hollow button">Search</a></td>
+                  <td><a href="save.htm" class="button">Save</a></td>
+        </tr></table>
+      </form>
+        </div>
+</div>
+<br>
+
+<!-- title -->
+<div class="row" id="title line">
+  <div class="large-12 medium-12 small-12 columns">
+    <div class="callout">
+      <h4 id="page-main-title" class="text-center">Do We Know Who We Are ?</h4>
+                <h5 id="page-subtitle" class="text-center"><em>Who are you ?</em></h5>
+    </div>
+  </div>
+</div>
+
+<!-- INTERFACE -->
+<form class="ajaxed" method="get" action="https://millette.cloudant.com/dwk">
+<div class="row">
+  <div class="large-6 medium-6 small-6 columns">
+    <div class="">
+                <label><strong>Family name</strong> <input type="text" name="familyName"></label>
+      <label><strong>Surname</strong> <input type="text" name="surname"></label>
+      <label><strong>Username</strong> <input type="text" name="username"></label>
+    </div>
+  </div>
+        <!-- photo -->
+        <div class="large-6 medium-6 small-6 columns">
+                <div class=""><br>
+                        <p><strong>My picture</strong></p>
+                        <p><del>Small image that accompanies each of your contributions.</del></p>
+                        <label for="FileUpload" class="button">Upload image (disabled) ...</label>
+                        <input type="file" id="FileUpload" class="show-for-sr" disabled>
+                        <p class="text-center">Soon available... <em>Please upload an image<br> approx 200 pixels by 200 pixels.</em></p>
+                </div>
+        </div>
+        <!-- end photo -->
+</div>
+
+<div class="row">
+<fieldset class="large-6 medium-6 small-6 columns">
+        <div class="">
+                <label><strong>Gender &nbsp;</strong>
+                <select>
+                 <option value="male">Male</option>
+                 <option value="female">Female</option>
+                 <option value="other">Other...</option>
+                </select>
+                </label>
+        </div>
+</fieldset>
+<fieldset class="large-6 medium-6 small-6 columns">
+        <div class="">
+                <label><strong>Age &nbsp;</strong>
+                <input type="number" name="age">
+                </label>
+        </div>
+</fieldset>
+</div>
+
+<div class="row">
+  <fieldset class="large-6 medium-6 small-6 columns">
+                <label>
+                  <strong>How many persons in your household ?</strong>
+                  <input type="number" name="persons">
+                </label>
+        </fieldset>
+        <fieldset class="large-6 medium-6 small-6 columns">
+          <legend><strong>Type of stakeholder</strong></legend>
+          <input id="founder" type="checkbox" checked><label for="founder">Founder</label>
+          <input id="worker" type="checkbox" checked><label for="worker">Worker</label>
+          <input id="vendor" type="checkbox" checked><label for="vendor">Vendor</label>
+          <input id="consumer" type="checkbox" checked><label for="consumer">Consumer</label>
+        </fieldset>
+</div>
+
+<div class="row">
+        <div class="large-6 medium-6 small-6 columns">
+          <div class="callout">
+                  <h4 class="secondary callout text-center">Home address</h4>
+                  <!-- apartment -->
+                  <div class="row">
+                                <div class="large-3 medium-3 small-3 columns">
+                                <p class="text-right"><strong>Apartment :</strong>
+                                </div>
+                                <div class="large-9 medium-9 small-9 columns">
+                                <input type="text" name="apartment">
+                                </div>
+                  </div>
+                  <!-- door -->
+                  <div class="row">
+                                <div class="large-3 medium-3 small-3 columns">
+                                <p class="text-right"><strong>Door :</strong>
+                                </div>
+                                <div class="large-9 medium-9 small-9 columns">
+                                <input type="text" name="door">
+                                </div>
+                  </div>
+                  <!-- street -->
+                  <div class="row">
+                                <div class="large-3 medium-3 small-3 columns">
+                                <p class="text-right"><strong>Street :</strong>
+                                </div>
+                                <div class="large-9 medium-9 small-9 columns">
+                                <input type="text" name="street">
+                                </div>
+                  </div>
+                  <!-- burrough -->
+                  <div class="row">
+                                <div class="large-3 medium-3 small-3 columns">
+                                <p class="text-right"><strong>Burrough :</strong>
+                                </div>
+                                <div class="large-9 medium-9 small-9 columns">
+                                <input type="text" name="burrough">
+                                </div>
+                  </div>
+                  <!-- city -->
+                  <div class="row">
+                                <div class="large-3 medium-3 small-3 columns">
+                                <p class="text-right"><strong>City :</strong>
+                                </div>
+                                <div class="large-9 medium-9 small-9 columns">
+                                <input type="text" name="city">
+                                </div>
+                  </div>
+                  <!-- province -->
+                  <div class="row">
+                                <div class="large-3 medium-3 small-3 columns">
+                                <p class="text-right"><strong>Province :</strong>
+                                </div>
+                                <div class="large-9 medium-9 small-9 columns">
+                                <input type="text" name="province">
+                                </div>
+                  </div>
+                  <!-- country -->
+                  <div class="row">
+                                <div class="large-3 medium-3 small-3 columns">
+                                <p class="text-right"><strong>Country :</strong>
+                                </div>
+                                <div class="large-9 medium-9 small-9 columns">
+                                <input type="text" name="country">
+                                </div>
+                  </div>
+                  <!-- postalCode -->
+                  <div class="row">
+                                <div class="large-3 medium-3 small-3 columns">
+                                <p class="text-right"><strong>Postal :</strong>
+                                </div>
+                                <div class="large-9 medium-9 small-9 columns">
+                                <input type="text" name="postalCode">
+                                </div>
+                  </div>
+                  <!-- end -->
+          </div>
+        </div>
+        <div class="large-6 medium-6 small-6 columns">
+          <div class="callout">
+                  <h4 class="secondary callout text-center">Business address</h4>
+                  <!-- apartment -->
+                  <div class="row">
+                                <div class="large-3 medium-3 small-3 columns">
+                                <p class="text-right"><strong>Apartment :</strong>
+                                </div>
+                                <div class="large-9 medium-9 small-9 columns">
+                                <input type="text" name="apartmentBiz">
+                                </div>
+                  </div>
+                  <!-- door -->
+                  <div class="row">
+                                <div class="large-3 medium-3 small-3 columns">
+                                <p class="text-right"><strong>Door :</strong>
+                                </div>
+                                <div class="large-9 medium-9 small-9 columns">
+                                <input type="text" name="doorBiz">
+                                </div>
+                  </div>
+                  <!-- street -->
+                  <div class="row">
+                                <div class="large-3 medium-3 small-3 columns">
+                                <p class="text-right"><strong>Street :</strong>
+                                </div>
+                                <div class="large-9 medium-9 small-9 columns">
+                                <input type="text" name="streetBiz">
+                                </div>
+                  </div>
+                  <!-- burrough -->
+                  <div class="row">
+                                <div class="large-3 medium-3 small-3 columns">
+                                <p class="text-right"><strong>Burrough :</strong>
+                                </div>
+                                <div class="large-9 medium-9 small-9 columns">
+                                <input type="text" name="burroughBiz">
+                                </div>
+                  </div>
+                  <!-- city -->
+                  <div class="row">
+                                <div class="large-3 medium-3 small-3 columns">
+                                <p class="text-right"><strong>City :</strong>
+                                </div>
+                                <div class="large-9 medium-9 small-9 columns">
+                                <input type="text" name="cityBiz">
+                                </div>
+                  </div>
+                  <!-- province -->
+                  <div class="row">
+                                <div class="large-3 medium-3 small-3 columns">
+                                <p class="text-right"><strong>Province :</strong>
+                                </div>
+                                <div class="large-9 medium-9 small-9 columns">
+                                <input type="text" name="provinceBiz">
+                                </div>
+                  </div>
+                  <!-- country -->
+                  <div class="row">
+                                <div class="large-3 medium-3 small-3 columns">
+                                <p class="text-right"><strong>Country :</strong>
+                                </div>
+                                <div class="large-9 medium-9 small-9 columns">
+                                <input type="text" name="countryBiz">
+                                </div>
+                  </div>
+                  <!-- postalCode -->
+                  <div class="row">
+                                <div class="large-3 medium-3 small-3 columns">
+                                <p class="text-right"><strong>Postal :</strong>
+                                </div>
+                                <div class="large-9 medium-9 small-9 columns">
+                                <input type="text" name="postalCodeBiz">
+                                </div>
+                  </div>
+                  <!-- end -->
+          </div>
+        </div>
+</div>
+
+<div class="row">
+        <div class="large-12 medium-12 small-12 columns">
+          <div class="callout">
+                  <h4 class="secondary callout text-center">Telecommunication</h4>
+                  <!-- E-mail -->
+                  <div class="row">
+                                <div class="large-2 medium-2 small-2 columns">
+                                <p class="text-right"><strong>E-mail :</strong>
+                                </div>
+                                <div class="large-10 medium-10 small-10 columns">
+                                <input type="text" name="email">
+                                </div>
+                  </div>
+                  <!-- Website -->
+                  <div class="row">
+                                <div class="large-2 medium-2 small-2 columns">
+                                <p class="text-right"><strong>Website :</strong>
+                                </div>
+                                <div class="large-10 medium-10 small-10 columns">
+                                <input type="text" name="website">
+                                </div>
+                  </div>
+                  <!-- Facebook -->
+                  <div class="row">
+                                <div class="large-2 medium-2 small-2 columns">
+                                <p class="text-right"><strong>Facebook :</strong>
+                                </div>
+                                <div class="large-10 medium-10 small-10 columns">
+                                <input type="text" name="facebook">
+                                </div>
+                  </div>
+                  <!-- Linked-In -->
+                  <div class="row">
+                                <div class="large-2 medium-2 small-2 columns">
+                                <p class="text-right"><strong>Linked-In :</strong>
+                                </div>
+                                <div class="large-10 medium-10 small-10 columns">
+                                <input type="text" name="linkedIn">
+                                </div>
+                  </div>
+                  <!-- Twitter -->
+                  <div class="row">
+                                <div class="large-2 medium-2 small-2 columns">
+                                <p class="text-right"><strong>Twitter :</strong>
+                                </div>
+                                <div class="large-10 medium-10 small-10 columns">
+                                <input type="text" name="twitter">
+                                </div>
+                  </div>
+                  <!-- Phone -->
+                  <div class="row">
+                                <div class="large-2 medium-2 small-2 columns">
+                                <p class="text-right"><strong>Phone :</strong>
+                                </div>
+                                <div class="large-10 medium-10 small-10 columns">
+                                <input type="text" name="phone">
+                                </div>
+                  </div>
+                  <!-- Fax -->
+                  <div class="row">
+                                <div class="large-2 medium-2 small-2 columns">
+                                <p class="text-right"><strong>Fax :</strong>
+                                </div>
+                                <div class="large-10 medium-10 small-10 columns">
+                                <input type="text" name="fax">
+                                </div>
+                  </div>
+                  <!-- end -->
+          </div>
+        </div>
+</div>
+
+<div class="row">
+        <div class="large-12 medium-12 small-12 columns">
+          <label>
+                  <strong>What is your DREAM / VISION ?</strong>
+                  <textarea name="vision" placeholder="None"></textarea>
+                </label>
+        </div>
+</div>
+
+<div class="row">
+        <div class="large-12 medium-12 small-12 columns">
+          <label>
+                  <strong>What are your GOALS / OBJECTIVES ?</strong>
+                  <textarea name="goals" placeholder="None"></textarea>
+                </label>
+        </div>
+</div>
+
+<div class="row">
+        <div class="large-12 medium-12 small-12 columns">
+          <label>
+                  <strong>What are your NEEDS / INTERESTS ?</strong>
+                  <textarea name="interests" placeholder="None"></textarea>
+                </label>
+        </div>
+</div>
+
+<div class="row">
+        <div class="large-12 medium-12 small-12 columns">
+          <label>
+                  <strong>What SKILLS do you have/need ?</strong>
+                  <textarea name="skills" placeholder="None"></textarea>
+                </label>
+        </div>
+</div>
+
+<div class="row">
+        <div class="large-12 medium-12 small-12 columns">
+          <label>
+                  <strong>What EXPERIENCE do you have/need ?</strong>
+                  <textarea name="experience" placeholder="None"></textarea>
+                </label>
+        </div>
+</div>
+
+<div class="row">
+        <div class="large-12 medium-12 small-12 columns">
+          <label>
+                  <strong>What TRAINING do you have/need ?</strong>
+                  <textarea name="training" placeholder="None"></textarea>
+                </label>
+        </div>
+</div>
+
+<div class="row">
+        <div class="large-12 medium-12 small-12 columns">
+          <label>
+                  <strong>What TOOLS do you have/need ?</strong>
+                  <textarea name="tools" placeholder="None"></textarea>
+                </label>
+        </div>
+</div>
+
+<div class="row">
+        <div class="large-5 medium-5 small-5 columns">
+                <input type="text" name="adminUsername" placeholder="admin">
+        </div>
+        <div class="large-5 medium-5 small-5 columns">
+                <input type="password" name="adminPassword">
+        </div>
+        <div class="large-2 medium-2 small-2 columns">
+                <input class="button expanded" type="submit" name="subscribe" value="Save">
+                <input class="button reset-form" type="reset" value="Reset">
+        </div>
+</div>
+</form>
+
+<div class="reveal" id="responseModal" data-reveal>
+  <h1>Response title...</h1>
+  <p class="lead">Response message...</p>
+  <button class="close-button" data-close aria-label="Close modal" type="button">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+<!--    SCRIPTS -->
+<script src="js/vendor/jquery.js"></script>
+<script src="js/vendor/what-input.js"></script>
+<script src="js/vendor/foundation.min.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>

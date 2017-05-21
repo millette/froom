@@ -1,3 +1,7 @@
 .env
 node_modules
 .next
+web/css
+web/foundation-icons
+web/img
+web/js/vendor
