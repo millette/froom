@@ -1,3 +1,5 @@
+/* global $ */
+
 'use strict'
 
 $(function () {
@@ -6,7 +8,7 @@ $(function () {
   var $modal = $('#responseModal')
 
   var toObj = function () {
-    var ret = {createdAt: new Date().toISOString()  }
+    var ret = { createdAt: new Date().toISOString() }
     $form.serializeArray().forEach(function (x) {
       if (x.value) { ret[x.name] = x.value }
     })
