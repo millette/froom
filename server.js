@@ -25,6 +25,11 @@ app.prepare()
     ctx.body = await res.json()
   })
 
+  router.get('/db/:more+', async ctx => {
+    await app.render(ctx.req, ctx.res, '/db', Object.assign(ctx.query, { what: ctx.params.more }))
+    ctx.respond = false
+  })
+
   router.get('/a', async ctx => {
     await app.render(ctx.req, ctx.res, '/b', ctx.query)
     ctx.respond = false

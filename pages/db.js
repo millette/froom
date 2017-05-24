@@ -20,8 +20,8 @@ export default class MyDBPage extends React.Component {
         <ul>
           <li><Link href='/'><a>TOP</a></Link></li>
           <li><Link href='/db'><a>db</a></Link></li>
-          <li><Link href='/db?what=_design/auth'><a>_design/auth</a></Link></li>
-          <li><Link href='/db?what=_all_docs'><a>_all_docs</a></Link></li>
+          <li><Link href='/db?what=_design/auth' as='/db/_design/auth'><a>_design/auth</a></Link></li>
+          <li><Link href='/db?what=_all_docs' as='/db/_all_docs'><a>_all_docs</a></Link></li>
         </ul>
         <pre>
           {JSON.stringify(this.props, null, ' ')}
@@ -30,23 +30,3 @@ export default class MyDBPage extends React.Component {
     )
   }
 }
-
-/*
-
-export default (a) => <div>
-  <p>DB...</p>
-  <pre>
-    a keys: {Object.keys(a).join(', ')}
-  </pre>
-  <pre>
-    a.url keys: {Object.keys(a.url).join(', ')}
-  </pre>
-  <pre>
-    a.url.query keys: {Object.keys(a.url.query).join(', ')}
-  </pre>
-  <pre>
-    a.url.query.all: {JSON.stringify(a.url.query.all, null, ' ')}
-  </pre>
-  <Link href='/'><a>TOP</a></Link>
-</div>
-*/
