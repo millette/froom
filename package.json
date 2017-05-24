@@ -2,7 +2,26 @@
   "name": "dwk",
   "version": "0.0.0",
   "author": "Robin Millette <robin@millette.info>",
+  "scripts": {
+    "dev": "node server",
+    "build": "standard && next build",
+    "start": "NODE_ENV=production node server",
+    "lint": "standard",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engine": {
+    "node": ">=7.6"
+  },
   "dependencies": {
-    "dotenv-safe": "^4.0.4"
+    "dotenv-safe": "^4.0.4",
+    "isomorphic-fetch": "^2.2.1",
+    "koa": "^2.2.0",
+    "koa-router": "^7.2.0",
+    "next": "^2.4.0",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4"
+  },
+  "devDependencies": {
+    "standard": "^10.0.2"
   }
 }
