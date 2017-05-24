@@ -4,8 +4,15 @@
 
 const fn = function (newDoc, oldDoc, userCtx, secObj) {
   if (userCtx.roles.indexOf('_admin') !== -1) { return }
-  if (newDoc && newDoc._deleted) { throw({ forbidden: 'Delete not permitted.' }) }
-  if (oldDoc) { throw({ forbidden: 'Edit not permitted.' }) }
+  let ret
+  if (newDoc && newDoc._deleted) {
+    ret = { forbidden: 'Delete not permitted.' }
+    throw ret
+  }
+  if (oldDoc) {
+    ret = { forbidden: 'Edit not permitted.' }
+    throw ret
+  }
 }
 
 const _id = '_design/auth'
