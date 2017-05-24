@@ -1,0 +1,27 @@
+'use strict'
+
+require('dotenv-safe').load()
+
+const readAuth = 'Basic ' + Buffer.from([process.env.ReadKey, process.env.ReadPassword].join(':')).toString('base64')
+
+module.exports = (router, app) => {
+  const handle = app.getRequestHandler()
+
+  router.get('/api/:more*', async ctx => {
+    const headers = { authorization: readAuth }
+    const u = ['https://millette.cloudant.com', 'dwk']
+    if (ctx.params.more) { u.push(ctx.params.more) }
+    const res = await fetch(u.join('/'), { headers })
+    ctx.body = await res.json()
+  })
+
+  router.get('/db/:more+', async ctx => {
+    await app.render(ctx.req, ctx.res, '/db', Object.assign({}, ctx.query, { what: ctx.params.more }))
+    ctx.respond = false
+  })
+
+  router.get('*', async ctx => {
+    await handle(ctx.req, ctx.res)
+    ctx.respond = false
+  })
+}
