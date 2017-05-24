@@ -10,7 +10,7 @@ export default class MyDBPage extends React.Component {
     const u = [host.indexOf('.') === -1 ? 'http:/' : 'https:/', host, 'api']
     if (yo.query.what) { u.push(yo.query.what) }
     const res = await fetch(u.join('/'))
-    return res.json()
+    return res.ok ? res.json() : { oups: res.status, ouch: res.statusText }
   }
 
   render () {

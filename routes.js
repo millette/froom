@@ -12,6 +12,7 @@ module.exports = (router, app) => {
     const u = [process.env.DBServer, process.env.DBName]
     if (ctx.params.more) { u.push(ctx.params.more) }
     const res = await fetch(u.join('/'), { headers })
+    ctx.assert(res.ok, res.status, res.statusText);
     ctx.body = await res.json()
   })
 
