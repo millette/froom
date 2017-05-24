@@ -1,6 +1,8 @@
 import React from 'react'
 import Link from 'next/link'
 import fetch from 'isomorphic-fetch'
+import pick from 'lodash.pick'
+import Header from '../components/progress'
 
 export default class MyDBPage extends React.Component {
   static async getInitialProps (yo) {
@@ -10,12 +12,13 @@ export default class MyDBPage extends React.Component {
     const u = [host.indexOf('.') === -1 ? 'http:/' : 'https:/', host, 'api']
     if (yo.query.what) { u.push(yo.query.what) }
     const res = await fetch(u.join('/'))
-    return res.ok ? res.json() : { oups: res.status, ouch: res.statusText }
+    return res.ok ? res.json() : pick(res, 'status', 'statusText')
   }
 
   render () {
     return (
       <div>
+        <Header />
         <p>DB...</p>
         <ul>
           <li><Link href='/'><a>TOP</a></Link></li>
