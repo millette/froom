@@ -9,7 +9,7 @@ module.exports = (router, app) => {
 
   router.get('/api/:more*', async ctx => {
     const headers = { authorization: readAuth }
-    const u = ['https://millette.cloudant.com', 'dwk']
+    const u = [process.env.DBServer, process.env.DBName]
     if (ctx.params.more) { u.push(ctx.params.more) }
     const res = await fetch(u.join('/'), { headers })
     ctx.body = await res.json()
