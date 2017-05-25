@@ -8,19 +8,20 @@ const Router = require('koa-router')
 // self
 const addRoutes = require('./routes')
 
-const dev = process.env.NODE_ENV !== 'production'
-const app = nextjs({ dev })
+const app = nextjs({ dev: process.env.NODE_ENV !== 'production' })
+
+const log = async (ctx, next) => {
+  const start = Date.now()
+  await next()
+  const ms = Date.now() - start
+  console.log(`${ctx.method} ${ctx.url} - ${ms}ms`)
+}
 
 const run = () => {
   const server = new Koa()
   const router = new Router()
   addRoutes(router, app)
-  server.use(async (ctx, next) => {
-    const start = Date.now()
-    await next()
-    const ms = Date.now() - start
-    console.log(`${ctx.method} ${ctx.url} - ${ms}ms`)
-  })
+  server.use(log)
   server.use(async (ctx, next) => {
     ctx.res.statusCode = 200
     await next()
