@@ -2,6 +2,15 @@
 
 'use strict'
 
+// npm
+require('dotenv-safe')
+  .load({ path: '../.env', sample: '../.env.example' })
+const fetch = require('isomorphic-fetch')
+
+const adminAuth = Buffer
+  .from([process.env.AdminKey, process.env.AdminPassword].join(':'))
+  .toString('base64')
+
 const fn = function (newDoc, oldDoc, userCtx, secObj) {
   if (userCtx.roles.indexOf('_admin') !== -1) { return }
   let ret
@@ -15,9 +24,25 @@ const fn = function (newDoc, oldDoc, userCtx, secObj) {
   }
 }
 
-const _id = '_design/auth'
+const doIt = () => {
+  const body = JSON.stringify({
+    _id: '_design/auth',
+    validate_doc_update: fn.toString()
+  })
+  const headers = {
+    authorization: 'Basic ' + adminAuth,
+    'content-type': 'application/json',
+    accept: 'application/json'
+  }
 
-console.log(JSON.stringify({ _id, validate_doc_update: fn.toString() }, null, ' '))
+  const opts = { headers, method: 'POST', body }
+  const u = [process.env.DBServer, process.env.DBName].join('/')
+  fetch(u, opts)
+    .then((res) => res.json())
+    .then(console.log)
+}
+
+doIt()
 
 /*
 Example arguments
