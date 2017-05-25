@@ -6,7 +6,7 @@ const nextjs = require('next')
 const Router = require('koa-router')
 
 // self
-const addRoutes = require('./routes')
+const addRoutes = require('./lib/routes')
 
 const app = nextjs({ dev: process.env.NODE_ENV !== 'production' })
 
