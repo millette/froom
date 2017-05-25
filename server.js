@@ -11,8 +11,7 @@ const addRoutes = require('./routes')
 const dev = process.env.NODE_ENV !== 'production'
 const app = nextjs({ dev })
 
-app.prepare()
-.then(() => {
+const run = () => {
   const server = new Koa()
   const router = new Router()
   addRoutes(router, app)
@@ -28,7 +27,9 @@ app.prepare()
   })
   server.use(router.routes())
   server.listen(3000, (err) => {
-    if (err) throw err
+    if (err) { throw err }
     console.log('> Ready on http://localhost:3000')
   })
-})
+}
+
+app.prepare().then(run)
