@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "author": "Robin Millette <robin@millette.info>",
   "scripts": {
-    "dev": "node server",
+    "dev": "n use 7.10.0 server",
     "build": "standard && next build",
     "start": "NODE_ENV=production node server",
     "lint": "standard",
