@@ -1,6 +1,8 @@
 'use strict'
 
+// npm
 require('dotenv-safe').load()
+const fetch = require('isomorphic-fetch')
 
 const readAuth = 'Basic ' + Buffer.from([process.env.ReadKey, process.env.ReadPassword].join(':')).toString('base64')
 
@@ -12,7 +14,7 @@ module.exports = (router, app) => {
     const u = [process.env.DBServer, process.env.DBName]
     if (ctx.params.more) { u.push(ctx.params.more) }
     const res = await fetch(u.join('/'), { headers })
-    ctx.assert(res.ok, res.status, res.statusText);
+    ctx.assert(res.ok, res.status, res.statusText)
     ctx.body = await res.json()
   })
 

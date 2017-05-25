@@ -1,10 +1,11 @@
 'use strict'
 
+// npm
 const Koa = require('koa')
 const nextjs = require('next')
 const Router = require('koa-router')
-const fetch = require('isomorphic-fetch')
 
+// self
 const addRoutes = require('./routes')
 
 const dev = process.env.NODE_ENV !== 'production'

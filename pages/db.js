@@ -1,7 +1,10 @@
+// npm
 import React from 'react'
 import Link from 'next/link'
 import fetch from 'isomorphic-fetch'
 import pick from 'lodash.pick'
+
+// self
 import Header from '../components/progress'
 
 const dbUrl = (yo) => {
