@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "author": "Robin Millette <robin@millette.info>",
   "scripts": {
-    "dev": "n use 7.10.0 server",
+    "dev": "standard && n use 7.10.0 server",
     "build": "standard && next build",
     "start": "NODE_ENV=production node server",
     "lint": "standard",
@@ -16,6 +16,7 @@
     "dotenv-safe": "^4.0.4",
     "isomorphic-fetch": "^2.2.1",
     "koa": "^2.2.0",
+    "koa-body": "^2.0.1",
     "koa-router": "^7.2.0",
     "lodash.pick": "^4.4.0",
     "next": "^2.4.0",
