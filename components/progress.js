@@ -8,9 +8,10 @@ Router.onRouteChangeStart = () => NProgress.start()
 Router.onRouteChangeComplete = () => NProgress.done()
 Router.onRouteChangeError = () => NProgress.done()
 
-export default () => (
+export default ({ children }) => (
   <div style={{ marginBottom: 20 }}>
     <Head>
+      { children }
       <link rel='stylesheet' type='text/css' href='/static/nprogress.css' />
     </Head>
   </div>
