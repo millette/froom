@@ -13,7 +13,7 @@ const adminAuth = Buffer
 
 const fn = function (newDoc, oldDoc, userCtx, secObj) {
   if (userCtx.roles.indexOf('_admin') !== -1) { return }
-  let ret
+  var ret
   if (newDoc && newDoc._deleted) {
     ret = { forbidden: 'Delete not permitted.' }
     throw ret
