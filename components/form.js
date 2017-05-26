@@ -14,14 +14,15 @@ class MyFormComp extends React.Component {
       le1: '',
       le2: '',
       le3: '',
-      le4: ''
+      le4: '',
+      msg: false
     }
 
     this.onChange = this.onChange.bind(this)
   }
 
   onChange (x) {
-    const obj = {}
+    const obj = { msg: false }
     obj[x.target.name] = x.target.value
     this.setState(Object.assign({}, this.state, obj))
   }
@@ -36,6 +37,9 @@ class MyFormComp extends React.Component {
       <div className='row columns'>
         <div className='medium-2 columns'>
           <MyFormViewComp le1={this.state.le1} le2={this.state.le2} le3={this.state.le3} le4={this.state.le4} />
+          <pre>
+            {this.state.msg && JSON.stringify(this.state.msg, null, ' ')}
+          </pre>
         </div>
         <div className='medium-10 columns'>
           <form onSubmit={this.handleSubmit.bind(this)}>

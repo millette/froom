@@ -8,15 +8,29 @@ import Header from '../components/progress'
 import MyFormComp from '../components/form'
 
 const onSubmit = (t, e) => {
-  console.log('SUB666:', t)
-  console.log('SUB777:', t.state)
-  console.log('SUB777:', e.target)
-  t.setState({
-    le1: '',
-    le2: '',
-    le3: '',
-    le4: '',
-  })
+  const headers = {
+    accept: 'application/json',
+    'content-type': 'application/json'
+  }
+
+  const opts = {
+    headers,
+    method: 'POST',
+    body: JSON.stringify(t.state)
+  }
+
+  fetch('http://localhost:3000/api', opts)
+    .then((res) => res.json())
+    .then((j) => {
+      t.setState({
+        le1: '',
+        le2: '',
+        le3: '',
+        le4: '',
+        msg: j
+      })
+    })
+    .catch(console.error)
 }
 
 class MyFormPage extends React.Component {

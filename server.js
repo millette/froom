@@ -22,6 +22,7 @@ const run = () => {
   const router = new Router()
   addRoutes(router, app)
   server.use(log)
+
   server.use(async (ctx, next) => {
     ctx.res.statusCode = 200
     await next()
