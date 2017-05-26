@@ -9,6 +9,7 @@ export default () => <div>
   <ul>
     <li><Link href='/db'><a>DB</a></Link></li>
     <li><Link href='/form'><a>Form</a></Link></li>
+    <li><Link href='/aye'><a>AYE</a></Link></li>
   </ul>
   <p>Goodbye</p>
 </div>

@@ -42,6 +42,7 @@ class MyFormPage extends React.Component {
           <ul className='menu'>
             <li><Link href='/'><a>TOP</a></Link></li>
             <li><Link href='/db'><a>DB</a></Link></li>
+            <li><Link href='/aye'><a>AYE</a></Link></li>
           </ul>
           <MyFormComp onSubmit={this.onSubmit.bind(this)} />
         </div>

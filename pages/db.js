@@ -26,6 +26,7 @@ export default class MyDBPage extends React.Component {
           <li><Link href='/db'><a>db</a></Link></li>
           <li><Link href='/db?what=_design/auth' as='/db/_design/auth'><a>_design/auth</a></Link></li>
           <li><Link href='/db?what=_all_docs' as='/db/_all_docs'><a>_all_docs</a></Link></li>
+          <li><Link href='/aye'><a>AYE</a></Link></li>
         </ul>
         <pre>
           {JSON.stringify(this.props, null, ' ')}
