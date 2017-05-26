@@ -20,6 +20,7 @@
     "lodash.pick": "^4.4.0",
     "next": "^2.4.0",
     "nprogress": "^0.2.0",
+    "prop-types": "^15.5.10",
     "react": "^15.5.4",
     "react-dom": "^15.5.4"
   },
