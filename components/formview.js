@@ -2,7 +2,7 @@
 import React from 'react'
 
 // const formViewComp = ({ le1, le2, le3, le4 }) => <dl>
-export default ({ le1, le2, le3, le4 }) => <dl>
+export default ({ le1, le2, le3, le4 }) => <dl className='callout'>
   <dt>Label</dt>
   <dd>{le1}</dd>
   <dt>Mores</dt>
@@ -12,5 +12,3 @@ export default ({ le1, le2, le3, le4 }) => <dl>
   <dt>L4</dt>
   <dd>{le4}</dd>
 </dl>
-
-// export default formViewComp
