@@ -27,7 +27,7 @@ class MyFormPage extends React.Component {
 
     fetch(this.props.u, opts)
       .then((res) => res.json())
-      .then(t.resetClick)
+      .then((j) => t.resetClick(j))
       .catch(console.error)
   }
 
