@@ -30,6 +30,7 @@ export default class MyDBPage extends React.Component {
         <p>DB...</p>
         <ul>
           <li><Link href='/'><a>TOP</a></Link></li>
+          <li><Link href='/form'><a>Form</a></Link></li>
           <li><Link href='/db'><a>db</a></Link></li>
           <li><Link href='/db?what=_design/auth' as='/db/_design/auth'><a>_design/auth</a></Link></li>
           <li><Link href='/db?what=_all_docs' as='/db/_all_docs'><a>_all_docs</a></Link></li>
