@@ -6,19 +6,11 @@ import pick from 'lodash.pick'
 
 // self
 import Header from '../components/progress'
-
-const dbUrl = (yo) => {
-  const host = (yo.req && yo.req.headers && yo.req.headers.host) ||
-    (window !== 'undefined' && window.location.host)
-  if (!host) { throw new Error('Weird host thing.') }
-  const u = [host.indexOf('.') === -1 ? 'http:/' : 'https:/', host, 'api']
-  if (yo.query.what) { u.push(yo.query.what) }
-  return u.join('/')
-}
+import utils from '../utils'
 
 export default class MyDBPage extends React.Component {
   static async getInitialProps (yo) {
-    const u = dbUrl(yo)
+    const u = utils.dbUrl(yo)
     const res = await fetch(u)
     return res.ok ? res.json() : pick(res, 'status', 'statusText')
   }

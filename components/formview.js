@@ -1,7 +1,8 @@
 // npm
 import React from 'react'
 
-const formViewComp = ({ le1, le2, le3, le4 }) => <dl>
+// const formViewComp = ({ le1, le2, le3, le4 }) => <dl>
+export default ({ le1, le2, le3, le4 }) => <dl>
   <dt>Label</dt>
   <dd>{le1}</dd>
   <dt>Mores</dt>
@@ -12,4 +13,4 @@ const formViewComp = ({ le1, le2, le3, le4 }) => <dl>
   <dd>{le4}</dd>
 </dl>
 
-export default formViewComp
+// export default formViewComp

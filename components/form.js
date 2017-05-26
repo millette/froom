@@ -8,6 +8,7 @@ import MyFormViewComp from '../components/formview'
 class MyFormComp extends React.Component {
   constructor (props) {
     super(props)
+
     this.state = {
       // necessary for controlled component
       // https://facebook.github.io/react/docs/forms.html#controlled-components
@@ -25,6 +26,18 @@ class MyFormComp extends React.Component {
     const obj = { msg: false }
     obj[x.target.name] = x.target.value
     this.setState(Object.assign({}, this.state, obj))
+  }
+
+  resetClick (j) {
+    this.setState({
+      // necessary for controlled component
+      // https://facebook.github.io/react/docs/forms.html#controlled-components
+      le1: '',
+      le2: '',
+      le3: '',
+      le4: '',
+      msg: j || false
+    })
   }
 
   handleSubmit (e) {
@@ -81,8 +94,10 @@ class MyFormComp extends React.Component {
 
             <div className='row'>
               <div className='medium-9 medium-offset-3 columns'>
-                <input className='button expanded' type='submit' />
-                <input style={{display: 'none'}} className='button expanded' type='reset' />
+                <div className='button-group expanded'>
+                  <input className='button primary' type='submit' />
+                  <input onClick={this.resetClick.bind(this, null)} className='button secondary' type='reset' />
+                </div>
               </div>
             </div>
           </form>
