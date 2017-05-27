@@ -3,10 +3,10 @@ import React from 'react'
 import Link from 'next/link'
 
 export default ({ single, id, le1, le2, le3, le4 }) => <div className='callout'>
-  {single && <h2>
+  {single && <h1>
     {le1}
     {id && <small> {id}</small>}
-  </h2>}
+  </h1>}
   {!single && <h2>
     <Link as={'/aye/' + id} href={{ pathname: '/aye', query: { id } }}>
       <a>
