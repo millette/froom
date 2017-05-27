@@ -13,7 +13,7 @@ export default class MyAyePage extends React.Component {
   static async getInitialProps (yo) {
     yo.query.what = '_all_docs'
     const u = utils.dbUrl(yo)
-    const res = await fetch(u + '?include_docs=true')
+    const res = await fetch(u + '?include_docs=true&limit=5')
     return res.ok ? res.json() : pick(res, 'status', 'statusText')
   }
 
@@ -27,7 +27,7 @@ export default class MyAyePage extends React.Component {
           <li><Link href='/'><a>TOP</a></Link></li>
           <li><Link href='/db'><a>DB</a></Link></li>
         </ul>
-        {this.props.rows.map((row) => <MyFormViewComp key={row.id} le4={row.doc && Object.keys(row.doc).join(', ')} le3={typeof row.doc} le1={row.id} le2={row.value.rev} />)}
+        {this.props.rows.map((row) => <MyFormViewComp key={row.id} le1={row.doc.le1} le2={row.doc.le2} le3={row.doc.le3} le4={row.doc.le4} id={row.id} />)}
       </div>
     </div>
   }

@@ -1,8 +1,8 @@
 // npm
 import React from 'react'
 
-// const formViewComp = ({ le1, le2, le3, le4 }) => <dl>
-export default ({ le1, le2, le3, le4 }) => <dl className='callout'>
+export default ({ id, le1, le2, le3, le4 }) => <dl className='callout'>
+  {id && <span><dt>ID</dt><dd>{id}</dd></span>}
   <dt>Label</dt>
   <dd>{le1}</dd>
   <dt>Mores</dt>
