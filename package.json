@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "standard && n use 7.10.0 server",
     "build": "standard && next build",
-    "start": "NODE_ENV=production node server",
+    "now-build": "next build",
+    "start": "NODE_ENV=production n use 7.10.0 server",
+    "now-start": "NODE_ENV=production node server",
     "lint": "standard",
     "now": "standard && now -E",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -23,7 +25,7 @@
     "lodash.pick": "^4.4.0",
     "next": "^2.4.0",
     "nprogress": "^0.2.0",
-    "pify": "^2.3.0",
+    "pify": "^3.0.0",
     "prop-types": "^15.5.10",
     "react": "^15.5.4",
     "react-dom": "^15.5.4"
