@@ -7,6 +7,7 @@
     "build": "standard && next build",
     "start": "NODE_ENV=production node server",
     "lint": "standard",
+    "now": "standard && now -E",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "engine": {
