@@ -18,7 +18,7 @@ export default class MyAyePage extends React.Component {
     }
     yo.query.what = '_all_docs'
     const u = utils.dbUrl(yo)
-    const res = await fetch(u + '?include_docs=true&limit=5')
+    const res = await fetch(u + '?include_docs=true&descending=true&endkey="comment:"&startkey="comment:\\ufff0"')
     return res.ok ? res.json() : pick(res, 'status', 'statusText')
   }
 
@@ -28,7 +28,7 @@ export default class MyAyePage extends React.Component {
     )
 
     const b = (
-      <DocViewComp single le1={this.props.le1} le2={this.props.le2} le3={this.props.le3} le4={this.props.le4} id={this.props._id} />
+      <DocViewComp single createdAt={this.props.createdAt} le1={this.props.le1} le2={this.props.le2} le3={this.props.le3} le4={this.props.le4} id={this.props._id} />
     )
 
     const c = this.props.rows ? a : b
@@ -40,6 +40,7 @@ export default class MyAyePage extends React.Component {
       <div className='row columns'>
         <ul className='menu'>
           <li><Link href='/'><a>TOP</a></Link></li>
+          <li><Link href='/form'><a>Form</a></Link></li>
           <li><Link href='/db'><a>DB</a></Link></li>
           <li><Link href='/aye'><a>AYE</a></Link></li>
         </ul>

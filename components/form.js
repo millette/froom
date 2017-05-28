@@ -30,8 +30,6 @@ class MyFormComp extends React.Component {
 
   resetClick (j) {
     this.setState({
-      // necessary for controlled component
-      // https://facebook.github.io/react/docs/forms.html#controlled-components
       le1: '',
       le2: '',
       le3: '',
