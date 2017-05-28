@@ -19,16 +19,10 @@ class MyFormPage extends React.Component {
       'content-type': 'application/json'
     }
 
-    // TODO: move this to routes.js (server-side only)
-    const now = Date.now()
-    // TODO: left-pad random for 0
-    const _id = `comment:${now}${Math.floor(Math.random() * 10)}`
-    const doc = Object.assign({ _id, createdAt: new Date(now).toISOString() }, t.state)
-
     const opts = {
       headers,
       method: 'POST',
-      body: JSON.stringify(doc)
+      body: JSON.stringify(t.state)
     }
 
     fetch(this.props.u, opts)
