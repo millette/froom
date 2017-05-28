@@ -22,6 +22,21 @@ class MyFormComp extends React.Component {
     this.onChange = this.onChange.bind(this)
   }
 
+  onKeyUp (x) {
+    /*
+    console.log('CHANGE:', Object.keys(x))
+    console.log('CHANGE:', x)
+    console.log('CHANGE:', x.target)
+    console.log('CHANGE:', Object.keys(x.target))
+    console.log('CHANGEev:', Object.keys(x.nativeEvent))
+    */
+    // console.log('CHANGEev:', x.nativeEvent)
+    if (x.nativeEvent.ctrlKey && x.nativeEvent.key === 'Enter') {
+      x.preventDefault()
+      this.props.onSubmit(this, x)
+    }
+  }
+
   onChange (x) {
     const obj = { msg: false }
     obj[x.target.name] = x.target.value
@@ -86,7 +101,7 @@ class MyFormComp extends React.Component {
                 <label htmlFor='right-label3' className='medium-text-right'>Comment</label>
               </div>
               <div className='medium-9 columns'>
-                <textarea name='le4' onChange={this.onChange} value={this.state.le4} rows='8' />
+                <textarea name='le4' onKeyUp={this.onKeyUp.bind(this)} onChange={this.onChange} value={this.state.le4} rows='8' />
               </div>
             </div>
 
