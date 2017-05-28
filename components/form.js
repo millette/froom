@@ -23,14 +23,6 @@ class MyFormComp extends React.Component {
   }
 
   onKeyUp (x) {
-    /*
-    console.log('CHANGE:', Object.keys(x))
-    console.log('CHANGE:', x)
-    console.log('CHANGE:', x.target)
-    console.log('CHANGE:', Object.keys(x.target))
-    console.log('CHANGEev:', Object.keys(x.nativeEvent))
-    */
-    // console.log('CHANGEev:', x.nativeEvent)
     if (x.nativeEvent.ctrlKey && x.nativeEvent.key === 'Enter') {
       x.preventDefault()
       this.props.onSubmit(this, x)
